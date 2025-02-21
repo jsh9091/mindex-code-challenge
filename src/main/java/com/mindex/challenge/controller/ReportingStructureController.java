@@ -11,21 +11,22 @@ import com.mindex.challenge.data.ReportingStructure;
 import com.mindex.challenge.service.ReportingStructureService;
 
 /**
- * Controller for reporting structure. 
+ * Controller for reporting structure.
+ * 
  * @author jhorvath
  */
 @RestController
 public class ReportingStructureController {
 	private static final Logger LOG = LoggerFactory.getLogger(ReportingStructureController.class);
-	
-	@Autowired
-    private ReportingStructureService reportingStructureService;
-	
-    @GetMapping("/totalreports/{id}")
-    public ReportingStructure numberOfReports(@PathVariable String id) {
-        LOG.debug("Received employee total reports request for id [{}]", id);
 
-        return reportingStructureService.numberOfReports(id);
-    }
+	@Autowired
+	private ReportingStructureService reportingStructureService;
+
+	@GetMapping("/totalreports/{id}")
+	public ReportingStructure numberOfReports(@PathVariable String id) {
+		LOG.debug("Received employee total reports request for id [{}]", id);
+
+		return reportingStructureService.numberOfReports(id);
+	}
 
 }
